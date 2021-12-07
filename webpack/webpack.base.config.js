@@ -3,12 +3,12 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: path.resolve(__dirname, 'src/index'),
+  entry: path.resolve(__dirname, '../src/index'),
   output: {
     filename: 'js/[name].[hash:6].js',
     publicPath: '/',
     chunkFilename: 'js/[name].[chunkhash:8].js',
-    path: path.resolve(__dirname, '/dist')
+    path: path.resolve(__dirname, '../dist')
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js'],
@@ -63,10 +63,9 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'public/index.html'),
+      template: path.join(__dirname, '../public/index.html'),
       inject: 'body',
-      favicon: path.resolve('public/favicon.ico'),
+      favicon: path.resolve(__dirname, '../public/favicon.ico'),
     })
   ]
-
 }

@@ -4,11 +4,12 @@ const webapckMerge = require('webpack-merge');
 const webpackBaseConfig = require('./webpack.base.config');
 
 module.exports = webapckMerge(webpackBaseConfig, {
+  mode: 'development',
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
+    contentBase: path.resolve(__dirname, '../dist'),
     historyApiFallback: true,
     hot: true,
     host: 'localhost',
@@ -18,7 +19,7 @@ module.exports = webapckMerge(webpackBaseConfig, {
     inline: true,
     proxy: {
 			'/api': {
-				target: 'http://47.100.138.80:3000',
+				target: 'http://localhost:3000',
 				changeOrigin: true,
 				pathRewrite: { '^/api': '' },
 			}
