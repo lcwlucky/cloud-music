@@ -8,7 +8,12 @@
 yarn
 ```
 
-## run
+## run server
+```
+yarn server
+```
+
+## run client
 ```
 yarn dev
 ```
